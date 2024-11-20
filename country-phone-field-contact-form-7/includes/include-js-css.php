@@ -94,16 +94,20 @@ function nb_cpf_embedCssJs() {
 					});
 	
 					$(".wpcf7-phonetext").each(function () {
+
+						var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
+
 						var hiddenInput = $(this).attr(\'name\');
 						//console.log(hiddenInput);
-						$("input[name="+hiddenInput+"-country-code]").val($(this).val());
+						$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 					});
 					
 					$(".wpcf7-phonetext").on("countrychange", function() {
 						// do something with iti.getSelectedCountryData()
 						//console.log(this.value);
+						var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
 						var hiddenInput = $(this).attr("name");
-						$("input[name="+hiddenInput+"-country-code]").val(this.value);
+						$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 						
 					});';
 	
@@ -172,14 +176,16 @@ function nb_cpf_embedCssJs() {
 							$(".wpcf7-phonetext").each(function () {
 								var hiddenInput = $(this).attr(\'name\');
 								//console.log(hiddenInput);
-								$("input[name="+hiddenInput+"-country-code]").val($(this).val());
+								var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
+								$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 							});
 							
 							$(".wpcf7-phonetext").on("countrychange", function() {
 								// do something with iti.getSelectedCountryData()
 								//console.log(this.value);
+								var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
 								var hiddenInput = $(this).attr("name");
-								$("input[name="+hiddenInput+"-country-code]").val(this.value);
+								$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 								
 							});';
 
@@ -246,14 +252,16 @@ function nb_cpf_embedCssJs() {
 				$(".wpcf7-phonetext").each(function () {
 					var hiddenInput = $(this).attr(\'name\');
 					//console.log(hiddenInput);
-					$("input[name="+hiddenInput+"-country-code]").val($(this).val());
+					var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
+					$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 				});
 				
 				$(".wpcf7-phonetext").on("countrychange", function() {
 					// do something with iti.getSelectedCountryData()
 					//console.log(this.value);
 					var hiddenInput = $(this).attr("name");
-					$("input[name="+hiddenInput+"-country-code]").val(this.value);
+					var dial_code = $(this).siblings(".flag-container").find(".selected-flag .selected-dial-code").text();
+					$("input[name="+hiddenInput+"-country-code]").val(dial_code);
 					
 				});';
 
