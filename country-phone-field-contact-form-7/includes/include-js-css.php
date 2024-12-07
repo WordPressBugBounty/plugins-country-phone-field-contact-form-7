@@ -74,7 +74,7 @@ function nb_cpf_embedCssJs() {
 		$custom_inline_js .= '';
 	}
 
-	if( ( isset( $nb_cpf_settings_options['country_auto_select'] ) && $nb_cpf_settings_options['country_auto_select'] == 1 ) || ( isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ) ){
+	/*if( ( isset( $nb_cpf_settings_options['country_auto_select'] ) && $nb_cpf_settings_options['country_auto_select'] == 1 ) || ( isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ) ){
 		$custom_inline_js .= '
 		(function($) {
 			$(function() {
@@ -232,9 +232,30 @@ function nb_cpf_embedCssJs() {
 			});
 		})(jQuery);';
 
-	}else{ 
+	}else{ */
 
-		$custom_inline_js .= '
+	if(  isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ){
+		$phone_defaultCountry = 'initialCountry: "auto",
+			geoIpLookup: function(success, failure) {
+				fetch("https://ipapi.co/json")
+				.then(function(res) { return res.json(); })
+				.then(function(data) { success(data.country_code); })
+				.catch(function() { failure(); });
+			},';
+
+	}
+	if(isset( $nb_cpf_settings_options['country_auto_select'] ) && $nb_cpf_settings_options['country_auto_select'] == 1 ){
+		$defaultCountry = 'initialCountry: "auto",
+		geoIpLookup: function(success, failure) {
+			fetch("https://ipapi.co/json")
+			.then(function(res) { return res.json(); })
+			.then(function(data) { success(data.country_code); })
+			.catch(function() { failure(); });
+		},';
+
+	}
+
+	$custom_inline_js .= '
 		(function($) {
 			$(function() {
 				$(".wpcf7-countrytext").countrySelect({
@@ -297,7 +318,7 @@ function nb_cpf_embedCssJs() {
 			});
 		})(jQuery);';
 	
-	}
+	//}
 	
 	
 	wp_add_inline_script('nbcpf-countryFlag-script',$custom_inline_js );
@@ -307,8 +328,8 @@ function nb_cpf_embedCssJs() {
 add_action( 'wp_enqueue_scripts', 'nb_cpf_embedCssJs' );
 
 
-add_action('wp_ajax_nopriv_auto_country_detection', 'nb_cpf_autoCountryDetection');
-add_action('wp_ajax_auto_country_detection', 'nb_cpf_autoCountryDetection' );
+//add_action('wp_ajax_nopriv_auto_country_detection', 'nb_cpf_autoCountryDetection');
+//add_action('wp_ajax_auto_country_detection', 'nb_cpf_autoCountryDetection' );
 
 function nb_cpf_autoCountryDetection(){
 

@@ -230,3 +230,6 @@ Please use contact form 7 standard featured minlength and maxlength option. It w
 
 2.5.5
 * Phone input field autofill issue fixed.
+
+2.5.6
+* The auto country selection API URL was not working. So it has updated.
