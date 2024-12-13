@@ -233,3 +233,6 @@ Please use contact form 7 standard featured minlength and maxlength option. It w
 
 2.5.6
 * The auto country selection API URL was not working. So it has updated.
+
+2.5.7
+* Issue fixed with cors for IP fetch

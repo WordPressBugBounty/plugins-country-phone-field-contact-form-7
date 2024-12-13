@@ -74,7 +74,7 @@ function nb_cpf_embedCssJs() {
 		$custom_inline_js .= '';
 	}
 
-	/*if( ( isset( $nb_cpf_settings_options['country_auto_select'] ) && $nb_cpf_settings_options['country_auto_select'] == 1 ) || ( isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ) ){
+	if( ( isset( $nb_cpf_settings_options['country_auto_select'] ) && $nb_cpf_settings_options['country_auto_select'] == 1 ) || ( isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ) ){
 		$custom_inline_js .= '
 		(function($) {
 			$(function() {
@@ -144,8 +144,8 @@ function nb_cpf_embedCssJs() {
 				var ip_address = "";
 
 				jQuery.ajax({
-					//url: "https://ipwho.is/",
-					url: "https://reallyfreegeoip.org/json/",
+					url: "https://ipapi.co/json/",
+					//url: "https://reallyfreegeoip.org/json/",
 					success: function(response){
 						
 						//console.log(response);
@@ -232,9 +232,9 @@ function nb_cpf_embedCssJs() {
 			});
 		})(jQuery);';
 
-	}else{ */
+	}else{ 
 
-	if(  isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ){
+	/*if(  isset( $nb_cpf_settings_options['phone_auto_select'] ) && $nb_cpf_settings_options['phone_auto_select'] == 1 ){
 		$phone_defaultCountry = 'initialCountry: "auto",
 			geoIpLookup: function(success, failure) {
 				fetch("https://ipapi.co/json")
@@ -253,7 +253,7 @@ function nb_cpf_embedCssJs() {
 			.catch(function() { failure(); });
 		},';
 
-	}
+	}*/
 
 	$custom_inline_js .= '
 		(function($) {
@@ -318,7 +318,7 @@ function nb_cpf_embedCssJs() {
 			});
 		})(jQuery);';
 	
-	//}
+	}
 	
 	
 	wp_add_inline_script('nbcpf-countryFlag-script',$custom_inline_js );
