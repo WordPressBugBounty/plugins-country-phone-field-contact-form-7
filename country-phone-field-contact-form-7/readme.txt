@@ -236,3 +236,6 @@ Please use contact form 7 standard featured minlength and maxlength option. It w
 
 2.5.7
 * Issue fixed with cors for IP fetch
+
+2.5.8
+* Fixed plugin field deprecated notice message.

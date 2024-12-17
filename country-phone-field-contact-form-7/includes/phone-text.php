@@ -178,7 +178,7 @@ add_action( 'wpcf7_admin_init', 'nbcpf_add_tag_generator_phonetext', 20 );
 function nbcpf_add_tag_generator_phonetext() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'phonetext', __( 'phone number', 'nb-cpf' ),
-		'nbcpf_tag_generator_phonetext' );
+		'nbcpf_tag_generator_phonetext', array( 'version' => '2' ) );
 }
 
 function nbcpf_tag_generator_phonetext( $contact_form, $args = '' ) {

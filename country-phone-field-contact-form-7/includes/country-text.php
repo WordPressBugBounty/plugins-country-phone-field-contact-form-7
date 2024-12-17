@@ -119,7 +119,7 @@ add_action( 'wpcf7_admin_init', 'nbcpf_add_tag_generator_countrytext', 20 );
 function nbcpf_add_tag_generator_countrytext() {
 	$tag_generator = WPCF7_TagGenerator::get_instance();
 	$tag_generator->add( 'countrytext', __( 'country drop-down', 'nb-cpf' ),
-		'nbcpf_tag_generator_countrytext' );
+		'nbcpf_tag_generator_countrytext', array( 'version' => '2' ) );
 }
 
 function nbcpf_tag_generator_countrytext( $contact_form, $args = '' ) {
