@@ -3,9 +3,9 @@ Contributors: narinderbisht
 Donate link: https://www.paypal.com/paypalme/narinderbisht
 Tags: contact form 7, country dropdown plugin, international telephone input, Country & Phone Field, WordPress plugin
 Requires at least: 6.0
-Tested up to: 6.8.1
-Requires PHP: 7.
-Stable Tag: 2.6.1
+Tested up to: 6.9.1
+Requires PHP: 7.4
+Stable Tag: 2.6.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -246,3 +246,9 @@ Please use contact form 7 standard featured minlength and maxlength option. It w
 
 2.6.1
 * Tested on wordpress 6.8.1
+
+2.6.2
+* Tested on wordpress 6.9.1
+
+2.6.3
+* Fixed PHP version warning.
