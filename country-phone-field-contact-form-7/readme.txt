@@ -5,7 +5,7 @@ Tags: contact form 7, country dropdown plugin, international telephone input, Co
 Requires at least: 6.0
 Tested up to: 6.9.1
 Requires PHP: 7.4
-Stable Tag: 2.6.3
+Stable Tag: 2.6.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -255,3 +255,6 @@ Please use contact form 7 standard featured minlength and maxlength option. It w
 
 2.6.4
 * IP address fetch API change
+
+2.6.5
+* IP address fetch API error fixed.
